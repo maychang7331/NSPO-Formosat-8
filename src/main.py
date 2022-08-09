@@ -135,8 +135,9 @@ class Interface(tk.Tk):
         self.text.grid(row=0, sticky="nsew", padx=(6, 0), pady=5)
         self.text.tag_configure("stderr", foreground="#b22222")
 
-        # sys.stdout = StdRedirector(self.text)
-        # sys.stderr = StdRedirector(self.text)
+        # show logs in the text widget
+        sys.stdout = StdRedirector(self.text)
+        sys.stderr = StdRedirector(self.text)
 
         scrollbar = tk.Scrollbar(bottomframe, command=self.text.yview)
         scrollbar.grid(row=0, column=1, sticky='nsew', padx=(0, 6), pady=5)
