@@ -1,0 +1,2 @@
+1. python -m pip install GDAL-3.4.2-cp37-cp37m-win_amd64.whl
+	Google Search "gdal python wheel":https://www.lfd.uci.edu/~gohlke/pythonlibs/
