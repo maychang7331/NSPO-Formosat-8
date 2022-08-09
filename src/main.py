@@ -13,7 +13,7 @@ class Interface(tk.Tk):
 
         self.title('FS8 Image Simulator')
         self.minsize(572, 687)  # w, h
-        self.iconbitmap('satelliteIcon.ico')
+        self.iconbitmap('../asset/satelliteIcon.ico')
         self.config(bg='#2B2B2B')
 
         """frame 1"""
