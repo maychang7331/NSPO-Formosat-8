@@ -23,11 +23,9 @@ In summary, simulated ephemeris, DEM and ortho-image are inputs for generating s
 </div>
 With simulated ephemeris, i.e. internal and external orientation are known, one could get the gray scale of each pixel as follow steps.
 
-**Step 1.** Gizen the initial value of elevation $Z^0$
+**Step 1.** Gizen the initial value of elevation for that specific pixel $Z^0$
 
-**Step 2.** Input $Z^0$ to topdown collinear equation [^註腳] to get approximate object space coordinate $(X^0,Y^0)$
-
-[^註腳]: 
+**Step 2.** Input $Z^0$ to topdown collinear equation to get approximate object space coordinate $(X^0,Y^0)$
 
 $$
 X = X_A + (Z-Z_A){m_{11}(x-x_0)+ m_{21}(y-y_0) + m_{31}(-f)\over m_{13}(x-x_0)+ m_{23}(y-y_0) + m_{33}(-f)}
@@ -36,11 +34,12 @@ $$
 $$
 Y = Y_A + (Z-Z_A){m_{12}(x-x_0)+ m_{22}(y-y_0) + m_{32}(-f)\over m_{13}(x-x_0)+ m_{23}(y-y_0) + m_{33}(-f)}
 $$
-Where $(x_0, y_0, -f)$ are internal orientation parameters of the satellite, $(x, y)$ is the , 
+
+Where $(X, Y, Z)$ are the object space coordinates of each pixel to be solved; $(X_A, Y_A, Z_A)$ are the external orientation parameters of the satellite in the object space coordinate system; $(x_0, y_0, -f)$ are the internal orientation parameters; $(x, y)$ are the image space cooridinates of each oject projected from the satellite; $m_{11}~m_{33}$ are elements of the rotation matrix converted from external parameters $(\omega, \phi, \kappa)$.
 
 **Step 3.**  The DEM elevation $Z^1$ can be interpolated by $(X^0,Y^0)$
 
-**Step 4.** Input $Z^1$ to collinear equation to get (X^1,Y^1)$
+**Step 4.** Input $Z^1$ to collinear equation to get $(X^1,Y^1)$
 
 **Step 5.** Repeat Step 3 and Step 4 until convergence. The object space coordinate of each specific pixel is then $(X^n,Y^n,Z^n)$
 
@@ -63,8 +62,8 @@ python main.py
 Add Gaussian noise to each attitude angle by giving standard deviation if needed.
 
 **4.** Click "Launch" to start generating simulated images. The generation progress will be shown in the gray textbox. Note that, the outputs of this code are as follows:<br>
-(1) Pickle files(.pkl) of each input DEM, ortho-image, and ephemeris data.</br>
-(2) Every single simulated image and a simulation.mp4 converted from the image sequences.
+(1) Pickle files(.pkl) of each input DEM, ortho-image, and ephemeris data.<br>
+(2) Every single simulated image and a simulation.mp4 converted from the image sequences.<br>
 (3) A metedata.txt which describes the flight time, satellite position in both ECEF and TM2 coordinate systems, satellite attitude as well as the time spent to generate each simulated image.
 
 
