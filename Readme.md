@@ -35,7 +35,7 @@ $$
 Y = Y_A + (Z-Z_A){m_{12}(x-x_0)+ m_{22}(y-y_0) + m_{32}(-f)\over m_{13}(x-x_0)+ m_{23}(y-y_0) + m_{33}(-f)}
 $$
 
-Where $(X, Y, Z)$ are the object space coordinates of each pixel to be solved; $(X_A, Y_A, Z_A)$ are the external orientation parameters of the satellite in the object space coordinate system; $(x_0, y_0, -f)$ are the internal orientation parameters; $(x, y)$ are the image space cooridinates of each oject projected from the satellite; $m_{11}~m_{33}$ are elements of the rotation matrix converted from external parameters $(\omega, \phi, \kappa)$.
+Where $(X, Y, Z)$ are the object space coordinates of each pixel to be solved; $(X_A, Y_A, Z_A)$ are the external orientation parameters of the satellite in the object space coordinate system; $(x_0, y_0, -f)$ are the internal orientation parameters; $(x, y)$ are the image space coordinates of each oject projected from the satellite; $m_{11}~m_{33}$ are elements of the rotation matrix converted from external parameters $(\omega, \phi, \kappa)$.
 
 **Step 3.**  The DEM elevation $Z^1$ can be interpolated by $(X^0,Y^0)$
 
