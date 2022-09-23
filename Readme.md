@@ -1,21 +1,18 @@
 # Dynamic Image Generation of Formosat-8 Frame Sensor
-## Prerequisites
-**1.** Install required packages.
-```shell
-pip install -r Requirements.txt
-```
-**2.**  Download gdal wheel from [Python Extension Packages for Windows](https://www.lfd.uci.edu/~gohlke/pythonlibs/)
-```shell
-python -m pip install GDAL-3.4.2-cp37-cp37m-win_amd64.whl
-```
 
 ## Introduction
-<div align="center">
-<img src=docs/flowchart.png height="160.5" width="279.75">
-</div>
-To generate simulated images of Formosat-8 frame sensor, the satellite position, velocity, and time data are used to simulate ephemeris in advance, so that the object-space coordinate of the satellite observation area can be calculated.
-In summary, simulated ephemeris, DEM and ortho-image are inputs for generating simulated images. Where the purpose of the input DEM is to provide gridded object space 3D coordinates, and the ortho-image input is to provide gray value to simulated image so that the presentation of simulated images can be close to real image.    
+The project addresses on establishing a geometric correction standard operating procedures for geomatric correction and dynamic image generation of Frmosat-8 optical sensor. Tasks related to frame sensors are: the determination of metadata for dynamic image generation and geometric calibration parameter definition; also, the establishment of geometric correction of frame-based images and the standard procedure of ortho-rectification. 
 
+To generate dynamic image, one should first generate the simulated images of the frame sensor. These simulated images will then undergo the process of ortho-rectification with the use of collinearity equation. Finally, stacked together to form dynamic image. 
+
+To generate simulated images of Formosat-8 frame sensor, satellite position, velocity, and time data are used to simulate ephemeris in advance so as to calculate the object-space coordinate of the satellite observation area.
+
+In summary, simulated ephemeris, DEM and ortho-image are inputs for generating simulated images. Where the purpose of the input DEM is to provide gridded object space 3D coordinates, and the ortho-image input is to provide gray value to simulated image so that the presentation of simulated images can be close to real image.
+
+
+<div align="center">
+<img src=docs/flowchart.png width="50%">
+</div>
 
 ### Ray Tracing Method
 <div align="center">
@@ -46,6 +43,15 @@ Where $(X, Y, Z)$ are the object space coordinates of each pixel to be solved; $
 **Step 6.** 
 Interpolate the ortho-image with object space coordinate $(X^n,Y^n,Z^n)$ to obtain the gray value of each pixel
 
+## Prerequisites
+**1.** Install required packages.
+```shell
+pip install -r Requirements.txt
+```
+**2.**  Download gdal wheel from [Python Extension Packages for Windows](https://www.lfd.uci.edu/~gohlke/pythonlibs/)
+```shell
+python -m pip install GDAL-3.4.2-cp37-cp37m-win_amd64.whl
+```
 
 ## Quick Start
 <div align="center">
