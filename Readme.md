@@ -1,7 +1,7 @@
 # Dynamic Image Generation of Formosat-8 Frame Sensor
 
 ## Introduction
-The project addresses on establishing a geometric correction standard operating procedures for geomatric correction and dynamic image generation of Frmosat-8 optical sensor. Tasks related to frame sensors are: the determination of metadata for dynamic image generation and geometric calibration parameter definition; also, the establishment of geometric correction of frame-based images and the standard procedure of ortho-rectification. 
+The project addresses on establishing a geometric correction standard operating procedures for geomatric correction and dynamic image generation of Formosat-8 optical sensor. Tasks related to frame sensors are: the determination of metadata for dynamic image generation and geometric calibration parameter definition; also, the establishment of geometric correction of frame-based images and the standard procedure of ortho-rectification. 
 
 To generate dynamic image, one should first generate the simulated images of the frame sensor. These simulated images will then undergo the process of ortho-rectification with the use of collinearity equation. Finally, stacked together to form dynamic image. 
 
